@@ -1,0 +1,100 @@
+"use client";
+
+import { motion } from "framer-motion";
+import { Search, Map, Wrench, LineChart } from "lucide-react";
+
+const steps = [
+  {
+    icon: Search,
+    number: "01",
+    title: "Diagnóstico gratuito",
+    description:
+      "Analizamos tu situación actual, identificamos oportunidades de mejora y definimos objetivos claros y medibles.",
+  },
+  {
+    icon: Map,
+    number: "02",
+    title: "Estrategia personalizada",
+    description:
+      "Diseñamos un plan de acción a medida, seleccionando las herramientas y tecnologías que mejor se adaptan a tus necesidades.",
+  },
+  {
+    icon: Wrench,
+    number: "03",
+    title: "Implementación ágil",
+    description:
+      "Desarrollamos e integramos las soluciones en iteraciones cortas, para que empieces a ver resultados desde el primer día.",
+  },
+  {
+    icon: LineChart,
+    number: "04",
+    title: "Optimización continua",
+    description:
+      "Monitorizamos el rendimiento, ajustamos estrategias y escalamos lo que funciona para maximizar tu retorno de inversión.",
+  },
+];
+
+export function Process() {
+  return (
+    <section id="proceso" className="py-24 lg:py-32 bg-muted/30">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-3xl text-center mb-16">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl"
+          >
+            Un proceso <span className="text-primary">transparente</span> y
+            sin sorpresas
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="mt-4 text-lg text-muted-foreground"
+          >
+            Cuatro pasos claros desde el primer contacto hasta los resultados
+            medibles.
+          </motion.p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {steps.map((step, index) => (
+            <motion.div
+              key={step.number}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="relative"
+            >
+              {/* Connector line */}
+              {index < steps.length - 1 && (
+                <div className="hidden lg:block absolute top-12 left-[60%] w-[80%] h-px bg-border" />
+              )}
+
+              <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary text-primary-foreground mb-6 relative">
+                  <step.icon className="h-6 w-6" />
+                  <span className="absolute -top-2 -right-2 flex h-6 w-6 items-center justify-center rounded-full bg-secondary text-[10px] font-bold text-secondary-foreground">
+                    {step.number}
+                  </span>
+                </div>
+
+                <h3 className="text-lg font-semibold text-foreground mb-2">
+                  {step.title}
+                </h3>
+
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  {step.description}
+                </p>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
