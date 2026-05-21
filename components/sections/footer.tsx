@@ -23,29 +23,29 @@ const footerLinks = {
 
 export function Footer() {
   return (
-    <footer className="border-t border-border bg-muted/30">
+    <footer className="border-t border-stone-200 bg-[#F5F3EB]">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-4">
           {/* Brand */}
           <div className="lg:col-span-1">
             <a href="#" className="inline-block">
-              <span className="text-xl font-bold tracking-tight text-foreground">
-                mdia<span className="text-primary">lab</span>
+              <span className="text-xl font-bold tracking-tight text-[#2D2A1B]">
+                mdia<span className="text-[#58521D]">lab</span>
               </span>
             </a>
-            <p className="mt-4 text-sm text-muted-foreground leading-relaxed">
+            <p className="mt-4 text-sm text-stone-600 leading-relaxed">
               Agencia especializada en marketing e inteligencia artificial.
               Transformamos negocios con tecnología y estrategia.
             </p>
             <div className="mt-6 space-y-3">
               <a
                 href="mailto:hello@mdialab.com"
-                className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
+                className="flex items-center gap-2 text-sm text-stone-600 hover:text-[#58521D] transition-colors"
               >
                 <Mail className="h-4 w-4" />
                 hello@mdialab.com
               </a>
-              <div className="flex items-center gap-2 text-sm text-muted-foreground">
+              <div className="flex items-center gap-2 text-sm text-stone-600">
                 <MapPin className="h-4 w-4" />
                 España
               </div>
@@ -54,7 +54,7 @@ export function Footer() {
 
           {/* Links */}
           <div>
-            <h3 className="text-sm font-semibold text-foreground mb-4">
+            <h3 className="text-sm font-semibold text-[#2D2A1B] mb-4">
               Servicios
             </h3>
             <ul className="space-y-3">
@@ -62,7 +62,7 @@ export function Footer() {
                 <li key={link.label}>
                   <a
                     href={link.href}
-                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                    className="text-sm text-stone-600 hover:text-[#58521D] transition-colors"
                   >
                     {link.label}
                   </a>
@@ -72,7 +72,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="text-sm font-semibold text-foreground mb-4">
+            <h3 className="text-sm font-semibold text-[#2D2A1B] mb-4">
               Empresa
             </h3>
             <ul className="space-y-3">
@@ -80,7 +80,7 @@ export function Footer() {
                 <li key={link.label}>
                   <a
                     href={link.href}
-                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                    className="text-sm text-stone-600 hover:text-[#58521D] transition-colors"
                   >
                     {link.label}
                   </a>
@@ -90,7 +90,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="text-sm font-semibold text-foreground mb-4">
+            <h3 className="text-sm font-semibold text-[#2D2A1B] mb-4">
               Legal
             </h3>
             <ul className="space-y-3">
@@ -98,7 +98,7 @@ export function Footer() {
                 <li key={link.label}>
                   <a
                     href={link.href}
-                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                    className="text-sm text-stone-600 hover:text-[#58521D] transition-colors"
                   >
                     {link.label}
                   </a>
@@ -108,14 +108,14 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-border flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-sm text-muted-foreground">
+        <div className="mt-12 pt-8 border-t border-stone-200 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p className="text-sm text-stone-600">
             © {new Date().getFullYear()} mdialab. Todos los derechos
             reservados.
           </p>
-          <p className="text-sm text-muted-foreground">
+          <p className="text-sm text-stone-600">
             Hecho con{" "}
-            <span className="text-primary" aria-label="amor">
+            <span className="text-[#58521D]" aria-label="amor">
               ♥
             </span>{" "}
             e inteligencia artificial

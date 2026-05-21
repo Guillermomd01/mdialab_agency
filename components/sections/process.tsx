@@ -36,16 +36,16 @@ const steps = [
 
 export function Process() {
   return (
-    <section id="proceso" className="py-24 lg:py-32 bg-muted/30">
+    <section id="proceso" className="py-24 lg:py-32 bg-[#F5F3EB]">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl text-center mb-16">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl"
+            className="text-3xl font-bold tracking-tight text-[#2D2A1B] sm:text-4xl"
           >
-            Un proceso <span className="text-primary">transparente</span> y
+            Un proceso <span className="text-[#58521D]">transparente</span> y
             sin sorpresas
           </motion.h2>
           <motion.p
@@ -53,7 +53,7 @@ export function Process() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="mt-4 text-lg text-muted-foreground"
+            className="mt-4 text-lg text-stone-600"
           >
             Cuatro pasos claros desde el primer contacto hasta los resultados
             medibles.
@@ -72,22 +72,22 @@ export function Process() {
             >
               {/* Connector line */}
               {index < steps.length - 1 && (
-                <div className="hidden lg:block absolute top-12 left-[60%] w-[80%] h-px bg-border" />
+                <div className="hidden lg:block absolute top-12 left-[60%] w-[80%] h-px bg-stone-300" />
               )}
 
               <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary text-primary-foreground mb-6 relative">
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#58521D] text-white mb-6 relative">
                   <step.icon className="h-6 w-6" />
-                  <span className="absolute -top-2 -right-2 flex h-6 w-6 items-center justify-center rounded-full bg-secondary text-[10px] font-bold text-secondary-foreground">
+                  <span className="absolute -top-2 -right-2 flex h-6 w-6 items-center justify-center rounded-full bg-[#D4C97A] text-[10px] font-bold text-[#2D2A1B]">
                     {step.number}
                   </span>
                 </div>
 
-                <h3 className="text-lg font-semibold text-foreground mb-2">
+                <h3 className="text-lg font-semibold text-[#2D2A1B] mb-2">
                   {step.title}
                 </h3>
 
-                <p className="text-sm text-muted-foreground leading-relaxed">
+                <p className="text-sm text-stone-600 leading-relaxed">
                   {step.description}
                 </p>
               </div>

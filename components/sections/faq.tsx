@@ -49,17 +49,17 @@ function FAQItem({
   onToggle: () => void;
 }) {
   return (
-    <div className="border-b border-border last:border-0">
+    <div className="border-b border-stone-200 last:border-0">
       <button
         onClick={onToggle}
         className="flex w-full items-center justify-between py-6 text-left"
         aria-expanded={isOpen}
       >
-        <span className="text-base font-semibold text-foreground pr-8">
+        <span className="text-base font-semibold text-[#2D2A1B] pr-8">
           {question}
         </span>
         <ChevronDown
-          className={`h-5 w-5 shrink-0 text-muted-foreground transition-transform duration-200 ${
+          className={`h-5 w-5 shrink-0 text-stone-500 transition-transform duration-200 ${
             isOpen ? "rotate-180" : ""
           }`}
         />
@@ -73,7 +73,7 @@ function FAQItem({
             transition={{ duration: 0.2 }}
             className="overflow-hidden"
           >
-            <p className="pb-6 text-muted-foreground leading-relaxed">
+            <p className="pb-6 text-stone-600 leading-relaxed">
               {answer}
             </p>
           </motion.div>
@@ -87,23 +87,23 @@ export function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section id="faq" className="py-24 lg:py-32 bg-muted/30">
+    <section id="faq" className="py-24 lg:py-32 bg-[#F5F3EB]">
       <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl"
+            className="text-3xl font-bold tracking-tight text-[#2D2A1B] sm:text-4xl"
           >
-            Preguntas <span className="text-primary">frecuentes</span>
+            Preguntas <span className="text-[#58521D]">frecuentes</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="mt-4 text-lg text-muted-foreground"
+            className="mt-4 text-lg text-stone-600"
           >
             Resolvemos las dudas más comunes sobre la implementación de IA en
             empresas.
@@ -114,7 +114,7 @@ export function FAQ() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="rounded-2xl bg-card border border-border/50 px-6"
+          className="rounded-2xl bg-white border border-stone-200 px-6"
         >
           {faqs.map((faq, index) => (
             <FAQItem

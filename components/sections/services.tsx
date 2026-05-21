@@ -9,7 +9,6 @@ import {
   Rocket,
   ArrowRight,
 } from "lucide-react";
-import { cn } from "@/lib/utils";
 
 const services = [
   {
@@ -76,24 +75,24 @@ const services = [
 
 export function Services() {
   return (
-    <section id="servicios" className="py-24 lg:py-32">
+    <section id="servicios" className="py-24 lg:py-32 bg-white">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl text-center mb-16">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl"
+            className="text-3xl font-bold tracking-tight text-[#2D2A1B] sm:text-4xl"
           >
             Servicios diseñados para{" "}
-            <span className="text-primary">impulsar tu negocio</span>
+            <span className="text-[#58521D]">impulsar tu negocio</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="mt-4 text-lg text-muted-foreground"
+            className="mt-4 text-lg text-stone-600"
           >
             No vendemos herramientas, vendemos resultados medibles. Cada servicio
             está pensado para generar impacto real en tu empresa.
@@ -110,12 +109,12 @@ export function Services() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className={`group relative flex flex-col rounded-2xl border p-8 transition-all hover:shadow-lg ${
                 service.featured
-                  ? "border-primary/20 bg-primary/5 lg:col-span-1 md:col-span-2 lg:col-span-1"
-                  : "border-border bg-card hover:border-primary/20"
+                  ? "border-[#58521D]/20 bg-[#58521D]/5 md:col-span-2 lg:col-span-1"
+                  : "border-stone-200 bg-white hover:border-[#58521D]/20"
               }`}
             >
               {service.featured && (
-                <span className="absolute -top-3 left-6 inline-flex items-center rounded-full bg-primary px-3 py-1 text-xs font-medium text-primary-foreground">
+                <span className="absolute -top-3 left-6 inline-flex items-center rounded-full bg-[#58521D] px-3 py-1 text-xs font-medium text-white">
                   Servicio estrella
                 </span>
               )}
@@ -123,18 +122,18 @@ export function Services() {
               <div
                 className={`flex h-12 w-12 items-center justify-center rounded-xl mb-6 ${
                   service.featured
-                    ? "bg-primary text-primary-foreground"
-                    : "bg-primary/10 text-primary"
+                    ? "bg-[#58521D] text-white"
+                    : "bg-[#58521D]/10 text-[#58521D]"
                 }`}
               >
                 <service.icon className="h-6 w-6" />
               </div>
 
-              <h3 className="text-xl font-semibold text-foreground mb-3">
+              <h3 className="text-xl font-semibold text-[#2D2A1B] mb-3">
                 {service.title}
               </h3>
 
-              <p className="text-muted-foreground mb-6 flex-1">
+              <p className="text-stone-600 mb-6 flex-1">
                 {service.description}
               </p>
 
@@ -142,9 +141,9 @@ export function Services() {
                 {service.features.map((feature) => (
                   <li
                     key={feature}
-                    className="flex items-center gap-2 text-sm text-muted-foreground"
+                    className="flex items-center gap-2 text-sm text-stone-600"
                   >
-                    <div className="h-1.5 w-1.5 rounded-full bg-accent" />
+                    <div className="h-1.5 w-1.5 rounded-full bg-[#D4C97A]" />
                     {feature}
                   </li>
                 ))}
@@ -152,7 +151,7 @@ export function Services() {
 
               <a
                 href="#contacto"
-                className="inline-flex items-center justify-start text-sm font-medium text-primary hover:text-primary/80 transition-colors group/btn"
+                className="inline-flex items-center justify-start text-sm font-medium text-[#58521D] hover:text-[#4A4518] transition-colors group/btn"
               >
                 Saber más
                 <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover/btn:translate-x-1" />

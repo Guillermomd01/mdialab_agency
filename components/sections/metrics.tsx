@@ -32,7 +32,7 @@ const metrics = [
 
 export function Metrics() {
   return (
-    <section className="py-16 bg-muted/50">
+    <section className="py-16 bg-[#F5F3EB]">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {metrics.map((metric, index) => (
@@ -42,18 +42,18 @@ export function Metrics() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="flex flex-col items-center text-center p-6 rounded-2xl bg-card border border-border/50"
+              className="flex flex-col items-center text-center p-6 rounded-2xl bg-white border border-stone-200 shadow-sm"
             >
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary mb-4">
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#58521D]/10 text-[#58521D] mb-4">
                 <metric.icon className="h-6 w-6" />
               </div>
-              <dt className="text-3xl font-bold tracking-tight text-foreground">
+              <dt className="text-3xl font-bold tracking-tight text-[#2D2A1B]">
                 {metric.value}
               </dt>
-              <dd className="mt-1 text-sm font-semibold text-foreground">
+              <dd className="mt-1 text-sm font-semibold text-[#2D2A1B]">
                 {metric.label}
               </dd>
-              <p className="mt-1 text-xs text-muted-foreground">
+              <p className="mt-1 text-xs text-stone-500">
                 {metric.description}
               </p>
             </motion.div>
