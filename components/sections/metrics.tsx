@@ -12,7 +12,7 @@ const metrics = [
   },
   {
     icon: TrendingUp,
-    value: "3x",
+    value: "215%",
     label: "Mejora promedio",
     description: "En productividad tras implementación",
   },
@@ -24,7 +24,7 @@ const metrics = [
   },
   {
     icon: Globe,
-    value: "98%",
+    value: "97%",
     label: "Satisfacción cliente",
     description: "Basado en encuestas post-proyecto",
   },

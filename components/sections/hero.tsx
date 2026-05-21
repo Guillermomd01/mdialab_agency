@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { ArrowRight, Sparkles } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 export function Hero() {
   return (
@@ -16,16 +16,6 @@ export function Hero() {
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-4xl text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 rounded-full border border-[#D4C97A]/30 bg-[#D4C97A]/10 px-4 py-1.5 text-sm font-medium text-[#D4C97A] mb-8"
-          >
-            <Sparkles className="h-4 w-4" />
-            Agencia especializada en Marketing e IA
-          </motion.div>
-
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -68,7 +58,7 @@ export function Hero() {
               href="#servicios"
               className={cn(
                 buttonVariants({ size: "lg", variant: "outline" }),
-                "rounded-full px-8 inline-flex border-white/30 text-white hover:bg-white/10 hover:text-white"
+                "rounded-full px-8 inline-flex bg-white text-[#2D2A1B] border-white hover:bg-white/90 hover:text-[#2D2A1B]"
               )}
             >
               Descubre cómo podemos ayudarte

@@ -32,7 +32,7 @@ export function CTA() {
 
             <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
               <a
-                href="mailto:hello@mdialab.com"
+                href="mailto:admin@mdialab.com"
                 className={cn(
                   buttonVariants({ size: "lg" }),
                   "rounded-full px-8 bg-[#D4C97A] text-[#2D2A1B] hover:bg-[#C4B96B] gap-2 inline-flex border-0"
@@ -42,12 +42,12 @@ export function CTA() {
                 Escríbenos
               </a>
               <a
-                href="https://wa.me/34600000000"
+                href="https://wa.me/34674372040"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={cn(
                   buttonVariants({ size: "lg", variant: "outline" }),
-                  "rounded-full px-8 border-white/30 text-white hover:bg-white/10 hover:text-white gap-2 inline-flex"
+                  "rounded-full px-8 bg-white text-[#2D2A1B] border-white hover:bg-white/90 hover:text-[#2D2A1B] gap-2 inline-flex"
                 )}
               >
                 <MessageCircle className="h-4 w-4" />

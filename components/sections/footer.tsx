@@ -39,11 +39,11 @@ export function Footer() {
             </p>
             <div className="mt-6 space-y-3">
               <a
-                href="mailto:hello@mdialab.com"
+                href="mailto:admin@mdialab.com"
                 className="flex items-center gap-2 text-sm text-stone-600 hover:text-[#58521D] transition-colors"
               >
                 <Mail className="h-4 w-4" />
-                hello@mdialab.com
+                admin@mdialab.com
               </a>
               <div className="flex items-center gap-2 text-sm text-stone-600">
                 <MapPin className="h-4 w-4" />
@@ -118,7 +118,7 @@ export function Footer() {
             <span className="text-[#58521D]" aria-label="amor">
               ♥
             </span>{" "}
-            e inteligencia artificial
+            en España
           </p>
         </div>
       </div>
