@@ -1,12 +1,9 @@
-"use client";
-
-import { motion } from "framer-motion";
 import { TrendingUp, Users, Zap, Globe } from "lucide-react";
 
 const metrics = [
   {
     icon: Users,
-    value: "50+",
+    value: "30+",
     label: "Empresas asesoradas",
     description: "Desde startups hasta corporaciones",
   },
@@ -36,13 +33,9 @@ export function Metrics() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {metrics.map((metric, index) => (
-            <motion.div
+            <div
               key={metric.label}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="flex flex-col items-center text-center p-6 rounded-2xl bg-white border border-stone-200 shadow-sm"
+              className={`animate-fade-in-up delay-${(index + 1) * 100} flex flex-col items-center text-center p-6 rounded-2xl bg-white border border-stone-200 shadow-sm`}
             >
               <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#58521D]/10 text-[#58521D] mb-4">
                 <metric.icon className="h-6 w-6" />
@@ -56,7 +49,7 @@ export function Metrics() {
               <p className="mt-1 text-xs text-stone-500">
                 {metric.description}
               </p>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

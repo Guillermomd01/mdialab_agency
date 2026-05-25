@@ -1,6 +1,3 @@
-"use client";
-
-import { motion } from "framer-motion";
 import {
   Target,
   Users,
@@ -40,11 +37,7 @@ export function WhyUs() {
     <section id="por-que-nosotros" className="py-24 lg:py-32 bg-white">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-          >
+          <div className="animate-fade-in-left">
             <h2 className="text-3xl font-bold tracking-tight text-[#2D2A1B] sm:text-4xl mb-6">
               Por qué las empresas{" "}
               <span className="text-[#58521D]">confían en mdialab</span>
@@ -57,13 +50,9 @@ export function WhyUs() {
 
             <div className="space-y-6">
               {reasons.map((reason, index) => (
-                <motion.div
+                <div
                   key={reason.title}
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
-                  className="flex gap-4"
+                  className={`animate-fade-in-up delay-${(index + 1) * 100} flex gap-4`}
                 >
                   <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-[#58521D]/10 text-[#58521D]">
                     <reason.icon className="h-5 w-5" />
@@ -76,17 +65,12 @@ export function WhyUs() {
                       {reason.description}
                     </p>
                   </div>
-                </motion.div>
+                </div>
               ))}
             </div>
-          </motion.div>
+          </div>
 
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="relative"
-          >
+          <div className="animate-fade-in-right relative">
             <div className="relative rounded-2xl bg-gradient-to-br from-[#58521D]/10 via-[#D4C97A]/10 to-[#58521D]/5 p-8 lg:p-12">
               <div className="space-y-8">
                 <div className="rounded-xl bg-white p-6 shadow-sm border border-stone-200">
@@ -151,7 +135,7 @@ export function WhyUs() {
                 </div>
               </div>
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

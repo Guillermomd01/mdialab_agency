@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 
 const faqs = [
@@ -37,52 +36,6 @@ const faqs = [
   },
 ];
 
-function FAQItem({
-  question,
-  answer,
-  isOpen,
-  onToggle,
-}: {
-  question: string;
-  answer: string;
-  isOpen: boolean;
-  onToggle: () => void;
-}) {
-  return (
-    <div className="border-b border-stone-200 last:border-0">
-      <button
-        onClick={onToggle}
-        className="flex w-full items-center justify-between py-6 text-left"
-        aria-expanded={isOpen}
-      >
-        <span className="text-base font-semibold text-[#2D2A1B] pr-8">
-          {question}
-        </span>
-        <ChevronDown
-          className={`h-5 w-5 shrink-0 text-stone-500 transition-transform duration-200 ${
-            isOpen ? "rotate-180" : ""
-          }`}
-        />
-      </button>
-      <AnimatePresence initial={false}>
-        {isOpen && (
-          <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.2 }}
-            className="overflow-hidden"
-          >
-            <p className="pb-6 text-stone-600 leading-relaxed">
-              {answer}
-            </p>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </div>
-  );
-}
-
 export function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
@@ -90,44 +43,47 @@ export function FAQ() {
     <section id="faq" className="py-24 lg:py-32 bg-[#F5F3EB]">
       <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-3xl font-bold tracking-tight text-[#2D2A1B] sm:text-4xl"
-          >
+          <h2 className="animate-fade-in-up text-3xl font-bold tracking-tight text-[#2D2A1B] sm:text-4xl">
             Preguntas <span className="text-[#58521D]">frecuentes</span>
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="mt-4 text-lg text-stone-600"
-          >
+          </h2>
+          <p className="animate-fade-in-up delay-100 mt-4 text-lg text-stone-600">
             Resolvemos las dudas más comunes sobre la implementación de IA en
             empresas.
-          </motion.p>
+          </p>
         </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="rounded-2xl bg-white border border-stone-200 px-6"
-        >
-          {faqs.map((faq, index) => (
-            <FAQItem
-              key={index}
-              question={faq.question}
-              answer={faq.answer}
-              isOpen={openIndex === index}
-              onToggle={() =>
-                setOpenIndex(openIndex === index ? null : index)
-              }
-            />
-          ))}
-        </motion.div>
+        <div className="animate-fade-in-up delay-200 rounded-2xl bg-white border border-stone-200 px-6">
+          {faqs.map((faq, index) => {
+            const isOpen = openIndex === index;
+            return (
+              <div key={index} className="border-b border-stone-200 last:border-0">
+                <button
+                  onClick={() => setOpenIndex(isOpen ? null : index)}
+                  className="flex w-full items-center justify-between py-6 text-left"
+                  aria-expanded={isOpen}
+                >
+                  <span className="text-base font-semibold text-[#2D2A1B] pr-8">
+                    {faq.question}
+                  </span>
+                  <ChevronDown
+                    className={`h-5 w-5 shrink-0 text-stone-500 transition-transform duration-200 ${
+                      isOpen ? "rotate-180" : ""
+                    }`}
+                  />
+                </button>
+                <div
+                  className={`faq-content ${isOpen ? "open" : ""}`}
+                >
+                  <div>
+                    <p className="pb-6 text-stone-600 leading-relaxed">
+                      {faq.answer}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
       </div>
     </section>
   );

@@ -1,6 +1,3 @@
-"use client";
-
-import { motion } from "framer-motion";
 import {
   Brain,
   Code2,
@@ -78,35 +75,20 @@ export function Services() {
     <section id="servicios" className="py-24 lg:py-32 bg-white">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl text-center mb-16">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-3xl font-bold tracking-tight text-[#2D2A1B] sm:text-4xl"
-          >
+          <h2 className="animate-fade-in-up text-3xl font-bold tracking-tight text-[#2D2A1B] sm:text-4xl">
             Servicios diseñados para{" "}
             <span className="text-[#58521D]">impulsar tu negocio</span>
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="mt-4 text-lg text-stone-600"
-          >
+          </h2>
+          <p className="animate-fade-in-up delay-100 mt-4 text-lg text-stone-600">
             No vendemos herramientas, vendemos resultados medibles. Cada servicio
             está pensado para generar impacto real en tu empresa.
-          </motion.p>
+          </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service, index) => (
-            <motion.div
+            <div
               key={service.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
               className={`group relative flex flex-col rounded-2xl border p-8 transition-all hover:shadow-lg ${
                 service.featured
                   ? "border-[#58521D]/20 bg-[#58521D]/5 md:col-span-2 lg:col-span-1"
@@ -156,7 +138,7 @@ export function Services() {
                 Saber más
                 <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover/btn:translate-x-1" />
               </a>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

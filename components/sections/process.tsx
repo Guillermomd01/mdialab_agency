@@ -1,6 +1,3 @@
-"use client";
-
-import { motion } from "framer-motion";
 import { Search, Map, Wrench, LineChart } from "lucide-react";
 
 const steps = [
@@ -39,38 +36,19 @@ export function Process() {
     <section id="proceso" className="py-24 lg:py-32 bg-[#F5F3EB]">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl text-center mb-16">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-3xl font-bold tracking-tight text-[#2D2A1B] sm:text-4xl"
-          >
+          <h2 className="animate-fade-in-up text-3xl font-bold tracking-tight text-[#2D2A1B] sm:text-4xl">
             Un proceso <span className="text-[#58521D]">transparente</span> y
             sin sorpresas
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="mt-4 text-lg text-stone-600"
-          >
+          </h2>
+          <p className="animate-fade-in-up delay-100 mt-4 text-lg text-stone-600">
             Cuatro pasos claros desde el primer contacto hasta los resultados
             medibles.
-          </motion.p>
+          </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {steps.map((step, index) => (
-            <motion.div
-              key={step.number}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="relative"
-            >
-              {/* Connector line */}
+            <div key={step.number} className="relative">
               {index < steps.length - 1 && (
                 <div className="hidden lg:block absolute top-12 left-[60%] w-[80%] h-px bg-stone-300" />
               )}
@@ -91,7 +69,7 @@ export function Process() {
                   {step.description}
                 </p>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>
